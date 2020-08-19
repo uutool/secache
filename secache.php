@@ -107,7 +107,9 @@ class secache{
 
         if($this->lock(false)){
             $locked = true;
-        }
+        }else{
+	    $locked = false;//$locked定义不完整，后续可能出现locked变量未定义提示	
+	}
 
         if($this->search($key,$offset)){
             $info = $this->_get_node($offset);
